@@ -1,0 +1,403 @@
+body {
+    background-color: #0a1931; /* Fondo azul marino */
+    margin: 0; /* Elimina el margen por defecto */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente principal */
+    color: #fff; /* Color de texto blanco */
+}
+
+/* Contenedor de los artículos, usa grid para varias columnas y centra los artículos */
+.articulos {
+    display: grid; /* Usa grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
+    gap: 2rem; /* Espacio entre columnas y filas */
+    justify-items: center; /* Centra los artículos horizontalmente */
+    margin: 2rem 0; /* Espacio arriba y abajo */
+}
+
+/* Estilo individual para cada artículo */
+.articulos article {
+    background: #162447; /* Fondo azul oscuro para la casilla */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra suave */
+    padding: 1rem; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+    max-width: 300px; /* Ancho máximo del artículo */
+    color: #fff; /* Color de texto blanco para contraste */
+    transition: background 0.3s; /* Transición suave al cambiar el fondo */
+}
+
+/* Estilo para las imágenes de los artículos */
+.articulos img {
+    width: 100%; /* Imagen ocupa todo el ancho del artículo */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 6px; /* Bordes redondeados en la imagen */
+    margin-bottom: 1rem; /* Espacio debajo de la imagen */
+}
+
+/* Estilo para el encabezado */
+header {
+    padding: 2rem 0; /* Espaciado arriba y abajo */
+    text-align: center; /* Centra el texto */
+}
+
+/* Estilo para el pie de página */
+footer {
+    text-align: center; /* Centra el texto */
+    padding: 1rem 0; /* Espaciado arriba y abajo */
+    background: rgba(0,0,0,0.2); /* Fondo semitransparente */
+    color: #fff; /* Color de texto blanco */
+}
+
+/* Estilos para la barra de navegación superior */
+.navbar {
+    background-color: #13294b; /* Color azul más oscuro */
+    padding: 0.5rem 0; /* Espaciado vertical */
+}
+
+.navbar ul {
+    list-style: none; /* Quita los puntos de la lista */
+    display: flex; /* Muestra las opciones en línea */
+    justify-content: center; /* Centra las opciones */
+    margin: 0; /* Sin margen */
+    padding: 0; /* Sin padding */
+}
+
+.navbar li {
+    margin: 0 1.5rem; /* Espacio entre opciones */
+}
+
+.navbar a {
+    color: #fff; /* Color de texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 1.1rem; /* Tamaño de fuente */
+    transition: color 0.2s; /* Transición suave al pasar el mouse */
+}
+
+.navbar a:hover {
+    color: #00aaff; /* Color al pasar el mouse */
+}
+
+/* Barra lateral izquierda más estética */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background: linear-gradient(180deg, #13294b 80%, #0a1931 100%);
+    box-shadow: 2px 0 16px rgba(0,0,0,0.18);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 2.5rem;
+    transition: left 0.3s;
+}
+
+/* Espacio para el logo */
+.sidebar .logo {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 2.5rem;
+    margin-top: 2rem; /* Añade espacio arriba del logo */
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    border: 4px solid #00aaff;
+}
+
+/* Espacio prefijado para el menú debajo del logo */
+.sidebar .menu-space {
+    width: 90%;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente el menú */
+    justify-content: center; /* Centra verticalmente el menú */
+    margin-bottom: 2rem;
+    gap: 0.75rem;
+    background: rgba(19,41,75,0.85);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 1rem 0.5rem;
+}
+
+/* Navegación vertical dentro de la barra */
+.navbar-vertical {
+    width: 100%;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente los enlaces */
+}
+
+.navbar-vertical ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos del menú */
+    width: 100%;
+}
+
+.navbar-vertical li {
+    width: 90%;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center; /* Centra cada opción */
+}
+
+.navbar-vertical a {
+    display: block;
+    width: 100%;
+    padding: 0.9rem 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.08rem;
+    border-radius: 7px;
+    text-align: center; /* Centra el texto del enlace */
+    letter-spacing: 0.5px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.navbar-vertical a:hover {
+    background: #00aaff;
+    color: #13294b;
+    box-shadow: 0 2px 8px rgba(0,170,255,0.10);
+}
+
+/* Submenús dentro de la barra lateral */
+.sidebar .submenu {
+    width: 90%;
+    background: #0a1931;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    padding: 0.7rem 1rem;
+    color: #fff;
+    font-size: 1rem;
+    z-index: 1;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Ajusta el contenido principal para no quedar debajo de la barra */
+main {
+    margin-left: 240px;
+    transition: margin-left 0.3s;
+}
+
+/* Si la barra lateral está oculta, el contenido ocupa todo el ancho */
+.sidebar.oculta {
+    left: -240px;
+}
+
+body.menu-cerrado main {
+    margin-left: 0;
+}
+
+/* Estilo para el botón que envuelve la imagen */
+.img-btn {
+    display: flex; /* Usa flexbox para centrar */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 200px; /* Altura fija para centrar mejor la imagen */
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    padding: 0; /* Sin padding */
+    cursor: pointer; /* Cursor de mano */
+    border-radius: 6px; /* Bordes redondeados */
+    transition: box-shadow 0.2s, outline 0.2s; /* Transición suave */
+    overflow: hidden; /* Oculta desbordes si la imagen es grande */
+}
+
+.img-btn:focus,
+.img-btn:hover {
+    outline: 2px solid #00aaff; /* Borde azul al enfocar o pasar el mouse */
+    box-shadow: 0 0 0 4px rgba(0,170,255,0.2); /* Sombra azul */
+}
+
+/* Ajusta la imagen para que no se deforme y se centre */
+.img-btn img {
+    max-width: 100%; /* No sobrepasa el ancho del botón */
+    max-height: 100%; /* No sobrepasa la altura del botón */
+    object-fit: contain; /* Mantiene la proporción y centra la imagen */
+    display: block; /* Elimina espacios extra */
+}
+
+/* Estilo para la sección de información extra */
+.info-extra {
+    background: #fff; /* Fondo blanco */
+    color: #222; /* Texto oscuro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2); /* Sombra */
+    padding: 2rem; /* Espaciado interno */
+    max-width: 500px; /* Ancho máximo */
+    margin: 2rem auto; /* Centrado */
+    text-align: center; /* Centra el texto */
+    position: relative; /* Para posicionar el botón de cerrar */
+    z-index: 10; /* Encima de otros elementos */
+}
+
+/* Estilo para el botón de cerrar */
+.info-extra button {
+    margin-top: 1rem; /* Espacio arriba */
+    padding: 0.5rem 1.5rem; /* Espaciado interno */
+    background: #0a1931; /* Fondo azul marino */
+    color: #fff; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+    font-size: 1rem; /* Tamaño de fuente */
+    transition: background 0.2s;
+}
+
+.info-extra button:hover {
+    background: #13294b; /* Fondo más oscuro al pasar el mouse */
+}
+
+/* Portada ocupa todo el ancho disponible */
+.portada-full {
+    width: calc(100vw - 40px); /* Deja 20px de espacio a cada lado */
+    max-width: calc(100vw - 40px);
+    margin: 0 auto 2rem auto; /* Centrado horizontal */
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    border-radius: 0;
+    background: linear-gradient(90deg, #00aaff 0%, #00ff99 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+.portada-full img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    display: block;
+    max-height: 700px;
+    object-fit: cover;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+
+/* Ejemplo para una casilla de artículo */
+.articulos article {
+    background: #162447; /* Fondo azul oscuro para la casilla */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra suave */
+    padding: 1rem; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+    max-width: 300px; /* Ancho máximo del artículo */
+    color: #fff; /* Color de texto blanco para contraste */
+    transition: background 0.3s; /* Transición suave al cambiar el fondo */
+}
+
+.articulos article h2 {
+    font-size: 1.5rem; /* Tamaño de fuente más grande */
+    margin: 0.5rem 0; /* Espacio arriba y abajo */
+}
+
+.articulos article .precio {
+    font-size: 1.2rem; /* Tamaño de fuente para el precio */
+    margin: 0.5rem 0; /* Espacio arriba y abajo */
+}
+
+.articulos article .btn-mas {
+    background: #00aaff; /* Fondo azul */
+    color: #fff; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+    padding: 0.5rem 1rem; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de fuente */
+    transition: background 0.2s;
+}
+
+.articulos article .btn-mas:hover {
+    background: #0099cc; /* Fondo azul más oscuro */
+}
+
+.articulos article .mas-info {
+    text-align: left; /* Alinea el texto a la izquierda */
+    margin: 1rem 0; /* Espacio arriba y abajo */
+}
+
+.articulos article .btn-comentar {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background: #00aaff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.articulos article .btn-comentar:hover {
+    background: #0099cc; /* Fondo azul más oscuro al pasar el mouse */
+}
+
+/* Fila extra de productos igual que la primera fila */
+.articulos.fila-extra {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    margin: 2rem 0;
+}
+
+/* Estilo individual para cada artículo en fila-extra */
+.articulos.fila-extra article {
+    background: #162447;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1rem;
+    text-align: center;
+    max-width: 300px;
+    color: #fff;
+    transition: background 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Imágenes en productos extra igual que la primera fila */
+.articulos.fila-extra .img-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: box-shadow 0.2s, outline 0.2s;
+    overflow: hidden;
+}
+
+.articulos.fila-extra .img-btn img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+/* ======= ARTÍCULOS ======= */
+/* Aquí puedes agregar más estilos para los artículos si lo necesitas */
