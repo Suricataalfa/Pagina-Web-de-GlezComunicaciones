@@ -1,0 +1,718 @@
+<!DOCTYPE html> <!-- Indica el tipo de documento HTML5 -->
+<html lang="es"> <!-- Comienza el documento HTML en español -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glez comunicaciones</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        body {
+            background: #13294b; /* Azul marino */
+        }
+        .casilla-portada.portada-full {
+            background: #f7fafd; /* Blanco muy suave */
+            border-radius: 24px;
+            box-shadow: 0 4px 24px #eaf6fb;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body> <!-- Cuerpo principal de la página -->
+    <!-- =================== BOTÓN MENÚ =================== -->
+    <button id="toggle-sidebar" style="position:fixed;top:20px;left:20px;z-index:200;padding:10px 16px;border:none;background:#13294b;color:#fff;border-radius:6px;cursor:pointer;">
+        ☰ Menú
+    </button> <!-- Botón para mostrar/ocultar la barra lateral -->
+
+    <!-- =================== BARRA LATERAL =================== -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="imagenes/iconglez.jpg" alt="Logo Glez comunicaciones">
+        </div>
+        <div class="menu-space">
+            <nav class="navbar-vertical">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li style="position:relative;">
+                        <a href="#" id="galeria-toggle" style="
+                            cursor:pointer;
+                            display:block;
+                            font-weight:600;
+                            color:#0099cc;
+                            padding:0.7rem 1.2rem;
+                            border-radius:14px;
+                            transition:background 0.2s;
+                            background: linear-gradient(90deg, #eaf6fb 0%, #c2e9fb 100%);
+                            box-shadow: 0 2px 8px rgba(0,153,204,0.07);
+                            margin-bottom:0.5rem;
+                            text-align:center;
+                            letter-spacing:0.04em;
+                        ">Galería <span style="font-size:1.1em;">&#9662;</span></a>
+                        <!-- Sub-menú para marcas de productos, oculto por defecto -->
+                        <div id="submenu-galeria" style="
+                            display:none;
+                            margin-top:0.5rem;
+                            background: linear-gradient(90deg, #eaf6fb 60%, #c2e9fb 100%);
+                            border-radius:12px;
+                            box-shadow: 0 2px 8px rgba(0,153,204,0.07);
+                            padding:0.5rem 0.3rem;
+                            position:static;
+                            width:90%;
+                            margin-left:auto;
+                            margin-right:auto;
+                        ">
+                            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.3rem;">
+                                <li>
+                                    <a href="#samsung" style="
+                                        color:#fff;
+                                        background: linear-gradient(90deg, #0099cc 0%, #00aaff 100%);
+                                        display:block;
+                                        padding:0.5rem 1rem;
+                                        border-radius:10px;
+                                        font-weight:600;
+                                        text-align:center;
+                                        font-size:0.95rem;
+                                        box-shadow:0 1px 4px #eaf6fb;
+                                        letter-spacing:0.03em;
+                                        transition:background 0.2s;
+                                    ">Samsung</a>
+                                </li>
+                                <li>
+                                    <a href="#redmi" style="
+                                        color:#fff;
+                                        background: linear-gradient(90deg, #0099cc 0%, #00aaff 100%);
+                                        display:block;
+                                        padding:0.5rem 1rem;
+                                        border-radius:10px;
+                                        font-weight:600;
+                                        text-align:center;
+                                        font-size:0.95rem;
+                                        box-shadow:0 1px 4px #eaf6fb;
+                                        letter-spacing:0.03em;
+                                        transition:background 0.2s;
+                                    ">Redmi</a>
+                                </li>
+                                <li>
+                                    <a href="#zte" style="
+                                        color:#fff;
+                                        background: linear-gradient(90deg, #0099cc 0%, #00aaff 100%);
+                                        display:block;
+                                        padding:0.5rem 1rem;
+                                        border-radius:10px;
+                                        font-weight:600;
+                                        text-align:center;
+                                        font-size:0.95rem;
+                                        box-shadow:0 1px 4px #eaf6fb;
+                                        letter-spacing:0.03em;
+                                        transition:background 0.2s;
+                                    ">ZTE</a>
+                                </li>
+                                <li>
+                                    <a href="#smart" style="
+                                        color:#fff;
+                                        background: linear-gradient(90deg, #0099cc 0%, #00aaff 100%);
+                                        display:block;
+                                        padding:0.5rem 1rem;
+                                        border-radius:10px;
+                                        font-weight:600;
+                                        text-align:center;
+                                        font-size:0.95rem;
+                                        box-shadow:0 1px 4px #eaf6fb;
+                                        letter-spacing:0.03em;
+                                        transition:background 0.2s;
+                                    ">Smart</a>
+                                </li>
+                                <li>
+                                    <a href="#tecno" style="
+                                        color:#fff;
+                                        background: linear-gradient(90deg, #0099cc 0%, #00aaff 100%);
+                                        display:block;
+                                        padding:0.5rem 1rem;
+                                        border-radius:10px;
+                                        font-weight:600;
+                                        text-align:center;
+                                        font-size:0.95rem;
+                                        box-shadow:0 1px 4px #eaf6fb;
+                                        letter-spacing:0.03em;
+                                        transition:background 0.2s;
+                                    ">Tecno</a>
+                                </li>
+                                <li>
+                                    <a href="#infinis" style="
+                                        color:#fff;
+                                        background: linear-gradient(90deg, #0099cc 0%, #00aaff 100%);
+                                        display:block;
+                                        padding:0.5rem 1rem;
+                                        border-radius:10px;
+                                        font-weight:600;
+                                        text-align:center;
+                                        font-size:0.95rem;
+                                        box-shadow:0 1px 4px #eaf6fb;
+                                        letter-spacing:0.03em;
+                                        transition:background 0.2s;
+                                    ">Infinis</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- =================== CONTENIDO PRINCIPAL =================== -->
+    <main>
+        <!-- ======= ENCABEZADO ======= -->
+        <header>
+            <div style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 2.5rem 0 1.5rem 0;
+                gap: 2rem;
+            ">
+                <!-- Espacio para el logo de la empresa -->
+                <div style="display:flex;align-items:center;justify-content:center;width:160px;height:160px;">
+                    <img src="imagenes/iconglez.jpg" alt="Logo Glez comunicaciones" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+                </div>
+                <span style="
+                    background: linear-gradient(90deg, #0099cc 0%, #00aaff 100%);
+                    padding: 0.8rem 1.8rem;
+                    border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    min-height: 70px;
+                ">
+                    <h1 style="
+                        text-align: center;
+                        font-size: 2.2rem;
+                        font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+                        font-weight: 800;
+                        color: #fff;
+                        margin: 0;
+                        letter-spacing: 0.08em;
+                        text-shadow: 0 2px 12px #232526;
+                    ">
+                        Glez comunicaciones
+                    </h1>
+                </span>
+            </div>
+        </header>
+
+        <!-- ======= BARRA DE ATAJOS ENTRE MARCAS ======= -->
+        <nav class="barra-atajos-marcas" style="
+            width:100%;
+            max-width:900px;
+            margin:2rem auto 2.5rem auto;
+            display:flex;
+            justify-content:center;
+            gap:1rem;
+            flex-wrap:wrap;
+        ">
+            <a href="#samsung" style="
+                background: linear-gradient(90deg, #0099cc 0%, #00aaff 100%);
+                color:#fff;
+                padding:0.7rem 1.5rem;
+                border-radius:18px;
+                font-weight:600;
+                text-decoration:none;
+                box-shadow:0 2px 8px #eaf6fb;
+                letter-spacing:0.04em;
+                transition:background 0.2s;
+            ">Samsung</a>
+            <a href="#redmi" style="
+                background: linear-gradient(90deg, #0099cc 0%, #00aaff 100%);
+                color:#fff;
+                padding:0.7rem 1.5rem;
+                border-radius:18px;
+                font-weight:600;
+                text-decoration:none;
+                box-shadow:0 2px 8px #eaf6fb;
+                letter-spacing:0.04em;
+                transition:background 0.2s;
+            ">Redmi</a>
+            <a href="#zte" style="
+                background: linear-gradient(90deg, #0099cc 0%, #00aaff 100%);
+                color:#fff;
+                padding:0.7rem 1.5rem;
+                border-radius:18px;
+                font-weight:600;
+                text-decoration:none;
+                box-shadow:0 2px 8px #eaf6fb;
+                letter-spacing:0.04em;
+                transition:background 0.2s;
+            ">ZTE</a>
+            <a href="#smart" style="
+                background: linear-gradient(90deg, #0099cc 0%, #00aaff 100%);
+                color:#fff;
+                padding:0.7rem 1.5rem;
+                border-radius:18px;
+                font-weight:600;
+                text-decoration:none;
+                box-shadow:0 2px 8px #eaf6fb;
+                letter-spacing:0.04em;
+                transition:background 0.2s;
+            ">Smart</a>
+            <a href="#tecno" style="
+                background: linear-gradient(90deg, #0099cc 0%, #00aaff 100%);
+                color:#fff;
+                padding:0.7rem 1.5rem;
+                border-radius:18px;
+                font-weight:600;
+                text-decoration:none;
+                box-shadow:0 2px 8px #eaf6fb;
+                letter-spacing:0.04em;
+                transition:background 0.2s;
+            ">Tecno</a>
+            <a href="#infinis" style="
+                background: linear-gradient(90deg, #0099cc 0%, #00aaff 100%);
+                color:#fff;
+                padding:0.7rem 1.5rem;
+                border-radius:18px;
+                font-weight:600;
+                text-decoration:none;
+                box-shadow:0 2px 8px #eaf6fb;
+                letter-spacing:0.04em;
+                transition:background 0.2s;
+            ">Infinis</a>
+        </nav>
+
+        <!-- ======= CASILLA DE PORTADA ======= -->
+        <div class="casilla-portada portada-full" style="
+            background: #f7fafd;
+            border-radius: 24px;
+            box-shadow: 0 4px 24px #eaf6fb;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        ">
+            <!-- Espacio para el logo de la empresa en la portada -->
+            <div style="display:flex;align-items:center;justify-content:center;width:160px;height:160px;">
+                <img src="imagenes/iconglez.jpg" alt="Logo Glez comunicaciones" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+            </div>
+            <div>
+                <h2 style="color:#00aaff;font-size:2rem;font-weight:700;">Portada principal</h2>
+                <p style="color:#162447;font-size:1.15rem;">Aquí puedes añadir una breve descripción o mensaje de bienvenida para tu página.</p>
+            </div>
+        </div>
+
+        <!-- ======= TÍTULO DE SECCIÓN DESTACADOS ======= -->
+        <h2 class="seccion-marca" style="text-align:center; color:#0099cc; margin:2rem 0 1.5rem 0;">Productos destacados</h2>
+
+        <!-- ======= SLIDER DE PRODUCTOS DESTACADOS ======= -->
+        <div class="slider-destacados" style="width:100%;max-width:600px;margin:0 auto 2rem auto;position:relative;">
+            <button class="slider-btn" id="prev-slide" style="position:absolute;left:0;top:50%;transform:translateY(-50%);background:#0099cc;color:#fff;border:none;border-radius:50%;width:40px;height:40px;cursor:pointer;z-index:2;">&#10094;</button>
+            <div class="slider-items" id="slider-items" style="overflow:hidden;">
+                <!-- Primer artículo destacado -->
+                <div class="slider-item" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+                    <img src="imagenes/tecnospark10pro.jpg" alt="Tecno Spark 10 Pro" style="width:220px;height:auto;border-radius:8px;">
+                    <h3 style="margin:1rem 0 0.5rem 0;">Tecno Spark 10 Pro</h3>
+                    <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                </div>
+                <!-- Segundo artículo destacado -->
+                <div class="slider-item" style="display:none;flex-direction:column;align-items:center;justify-content:center;">
+                    <img src="imagenes/samsunga05.jpg" alt="Samsung A05" style="width:220px;height:auto;border-radius:8px;">
+                    <h3 style="margin:1rem 0 0.5rem 0;">Samsung A05</h3>
+                    <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                </div>
+                <!-- Tercer artículo destacado -->
+                <div class="slider-item" style="display:none;flex-direction:column;align-items:center;justify-content:center;">
+                    <img src="assets/foto3.jpg" alt="Foto 3" style="width:220px;height:auto;border-radius:8px;">
+                    <h3 style="margin:1rem 0 0.5rem 0;">Título 3</h3>
+                    <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                </div>
+                <!-- Cuarto artículo destacado -->
+                <div class="slider-item" style="display:none;flex-direction:column;align-items:center;justify-content:center;">
+                    <img src="imagenes/foto4.jpg" alt="Foto 4" style="width:220px;height:auto;border-radius:8px;">
+                    <h3 style="margin:1rem 0 0.5rem 0;">Título 4</h3>
+                    <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                </div>
+                <!-- Quinto artículo destacado -->
+                <div class="slider-item" style="display:none;flex-direction:column;align-items:center;justify-content:center;">
+                    <img src="imagenes/foto5.jpg" alt="Foto 5" style="width:220px;height:auto;border-radius:8px;">
+                    <h3 style="margin:1rem 0 0.5rem 0;">Título 5</h3>
+                    <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                </div>
+            </div>
+            <button class="slider-btn" id="next-slide" style="position:absolute;right:0;top:50%;transform:translateY(-50%);background:#0099cc;color:#fff;border:none;border-radius:50%;width:40px;height:40px;cursor:pointer;z-index:2;">&#10095;</button>
+        </div>
+
+        <!-- ======= BARRA DE INFORMACIÓN SOFISTICADA ======= -->
+        <div class="barra-info" id="barra-info" style="
+            width:100%;
+            max-width:900px;
+            margin:3rem auto;
+            padding:3rem 3rem;
+            background: linear-gradient(90deg, #232526 0%, #414345 100%);
+            color:#f3f3f3;
+            border-radius:32px;
+            box-shadow: 0 12px 40px rgba(35,37,38,0.22);
+            text-align:center;
+            font-size:1.45rem;
+            font-family:'Segoe UI', 'Roboto', Arial, sans-serif;
+            position:relative;
+            overflow:hidden;
+            letter-spacing:0.04em;
+        ">
+            <span style="position:absolute;left:32px;top:32px;font-size:2.8rem;opacity:0.18;">💡</span>
+            <strong style="font-size:2rem;display:block;margin-bottom:1rem;color:#ffd700;letter-spacing:0.07em;text-shadow:0 2px 12px #232526;">
+                ¿Sabías que?
+            </strong>
+            <span id="info-producto" style="display:block;margin-bottom:1rem;font-weight:500;">
+                Aquí puedes encontrar los <b style="color:#ffd700;">celulares más populares</b> y recomendados por nuestros clientes.
+            </span>
+            <span style="display:block;margin-bottom:1rem;">
+                Descubre modelos de <b style="color:#ffd700;">Samsung, iPhone, Xiaomi</b> y más, con información actualizada, características y precios. ¡Desliza el slider para ver los destacados!
+            </span>
+            <span style="display:inline-block;padding:0.6rem 2rem;background:#ffd700;color:#232526;border-radius:32px;font-size:1.25rem;box-shadow:0 2px 16px rgba(255,215,0,0.13);font-weight:600;">
+                ¡Desliza el slider para descubrirlos!
+            </span>
+            <span style="position:absolute;right:32px;bottom:32px;font-size:2.2rem;opacity:0.12;">📱</span>
+        </div>
+
+        <!-- ======= ARTÍCULOS (resto de productos) ======= -->
+        <div class="articulos"> <!-- Contenedor de los artículos -->
+            <!-- === Primer artículo === -->
+            <article> <!-- Primer artículo -->
+                <button class="img-btn">
+                    <img src="imagenes/tecnospark10pro.jpg" alt="Tecno Spark 10 Pro">
+                </button>
+                <h2>Tecno Spark 10 Pro</h2>
+                <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                <button class="btn-mas" onclick="mostrarMasInfo(this)">Más...</button>
+                <div class="mas-info" style="display:none;">
+                    <ul style="text-align:left; margin:0 1rem;">
+                        <li><strong>Información relevante sobre el artículo:</strong></li>
+                        <li><strong>Información general:</strong></li>
+                        <li>Lanzamiento: marzo de 2023 (fecha oficial entre el 6 y 15 de marzo)</li>
+                        <li>Marca: Tecno</li>
+                        <li>Sistema operativo: Android 13 con capa personalizada HiOS 12.6</li>
+                        <li>8GB RAM, 128GB almacenamiento y cámara de 50MP</li>
+                        <li>Batería de larga duración y pantalla FHD+ de 6.8 pulgadas</li>
+                    </ul>
+                </div>
+            </article>
+            <!-- === Segundo artículo === -->
+            <article> <!-- Segundo artículo -->
+                <button class="img-btn">
+                    <img src="imagenes/samsunga05.jpg" alt="Samsung A05">
+                </button>
+                <h2>Samsung A05</h2>
+                <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                <button class="btn-mas" onclick="mostrarMasInfo(this)">Más...</button>
+                <div class="mas-info" style="display:none;">
+                    <ul style="text-align:left; margin:0 1rem;">
+                        <li>Información relevante sobre el artículo 2.</li>
+                        <li>Detalles adicionales del artículo 2.</li>
+                    </ul>
+                </div>
+            </article>
+            <!-- === Tercer artículo === -->
+            <article> <!-- Tercer artículo -->
+                <button class="img-btn">
+                    <img src="assets/foto3.jpg" alt="Foto 3">
+                </button>
+                <h2>Título 3</h2>
+                <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                <button class="btn-mas" onclick="mostrarMasInfo(this)">Más...</button>
+                <div class="mas-info" style="display:none;">
+                    <ul style="text-align:left; margin:0 1rem;">
+                        <li>Información relevante sobre el artículo 3.</li>
+                        <li>Detalles adicionales sobre el artículo 3.</li>
+                    </ul>
+                </div>
+            </article>
+            <!-- === Cuarto artículo === -->
+            <article> <!-- Cuarto artículo -->
+                <button class="img-btn">
+                    <img src="imagenes/foto4.jpg" alt="Foto 4">
+                </button>
+                <h2>Título 4</h2>
+                <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                <button class="btn-mas" onclick="mostrarMasInfo(this)">Más...</button>
+                <div class="mas-info" style="display:none;">
+                    <ul style="text-align:left; margin:0 1rem;">
+                        <li>Información relevante sobre el artículo 4.</li>
+                        <li>Detalles adicionales sobre el artículo 4.</li>
+                    </ul>
+                </div>
+            </article>
+            <!-- === Quinto artículo === -->
+            <article> <!-- Quinto artículo -->
+                <button class="img-btn">
+                    <img src="imagenes/foto5.jpg" alt="Foto 5">
+                </button>
+                <h2>Título 5</h2>
+                <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                <button class="btn-mas" onclick="mostrarMasInfo(this)">Más...</button>
+                <div class="mas-info" style="display:none;">
+                    <ul style="text-align:left; margin:0 1rem;">
+                        <li>Información relevante sobre el artículo 5.</li>
+                        <li>Detalles adicionales sobre el artículo 5.</li>
+                    </ul>
+                </div>
+            </article>
+        </div> <!-- Fin de .articulos -->
+
+        <!-- ======= BARRA DIVISORA ======= -->
+        <hr style="width:90%;margin:2rem auto;border:0;border-top:3px solid #00aaff;">
+
+        <!-- ======= TÍTULO DE SECCIÓN ======= -->
+        <h2 class="seccion-marca" style="text-align:center; color:#0099cc; margin-bottom:1.5rem;">Samsung</h2>
+
+        <!-- ======= SEGUNDA FILA DE PRODUCTOS (casillas extra) ======= -->
+        <div class="articulos fila-extra">
+            <!-- === Sexta casilla === -->
+            <article>
+                <button class="img-btn">
+                    <img src="imagenes/foto6.jpg" alt="Foto 6">
+                </button>
+                <h2>Título 6</h2>
+                <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                <button class="btn-mas" onclick="mostrarMasInfo(this)">Más...</button>
+                <div class="mas-info" style="display:none;">
+                    <ul style="text-align:left; margin:0 1rem;">
+                        <li>Información relevante sobre el artículo 6.</li>
+                        <li>Detalles adicionales sobre el artículo 6.</li>
+                    </ul>
+                </div>
+                <button class="btn-comentar">Comentar</button>
+            </article>
+            <!-- === Séptima casilla === -->
+            <article>
+                <button class="img-btn">
+                    <img src="imagenes/foto7.jpg" alt="Foto 7">
+                </button>
+                <h2>Título 7</h2>
+                <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                <button class="btn-mas" onclick="mostrarMasInfo(this)">Más...</button>
+                <div class="mas-info" style="display:none;">
+                    <ul style="text-align:left; margin:0 1rem;">
+                        <li>Información relevante sobre el artículo 7.</li>
+                        <li>Detalles adicionales sobre el artículo 7.</li>
+                    </ul>
+                </div>
+                <button class="btn-comentar">Comentar</button>
+            </article>
+            <!-- === Octava casilla === -->
+            <article>
+                <button class="img-btn">
+                    <img src="imagenes/foto8.jpg" alt="Foto 8">
+                </button>
+                <h2>Título 8</h2>
+                <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                <button class="btn-mas" onclick="mostrarMasInfo(this)">Más...</button>
+                <div class="mas-info" style="display:none;">
+                    <ul style="text-align:left; margin:0 1rem;">
+                        <li>Información relevante sobre el artículo 8.</li>
+                        <li>Detalles adicionales sobre el artículo 8.</li>
+                    </ul>
+                </div>
+                <button class="btn-comentar">Comentar</button>
+            </article>
+            <!-- === Novena casilla === -->
+            <article>
+                <button class="img-btn">
+                    <img src="imagenes/foto9.jpg" alt="Foto 9">
+                </button>
+                <h2>Título 9</h2>
+                <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                <button class="btn-mas" onclick="mostrarMasInfo(this)">Más...</button>
+                <div class="mas-info" style="display:none;">
+                    <ul style="text-align:left; margin:0 1rem;">
+                        <li>Información relevante sobre el artículo 9.</li>
+                        <li>Detalles adicionales sobre el artículo 9.</li>
+                    </ul>
+                </div>
+                <button class="btn-comentar">Comentar</button>
+            </article>
+            <!-- === Décima casilla === -->
+            <article>
+                <button class="img-btn">
+                    <img src="imagenes/foto10.jpg" alt="Foto 10">
+                </button>
+                <h2>Título 10</h2>
+                <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                <button class="btn-mas" onclick="mostrarMasInfo(this)">Más...</button>
+                <div class="mas-info" style="display:none;">
+                    <ul style="text-align:left; margin:0 1rem;">
+                        <li>Información relevante sobre el artículo 10.</li>
+                        <li>Detalles adicionales sobre el artículo 10.</li>
+                    </ul>
+                </div>
+                <button class="btn-comentar">Comentar</button>
+            </article>
+            <!-- === Onceava casilla === -->
+            <article>
+                <button class="img-btn">
+                    <img src="imagenes/foto11.jpg" alt="Foto 11">
+                </button>
+                <h2>Título 11</h2>
+                <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                <button class="btn-mas" onclick="mostrarMasInfo(this)">Más...</button>
+                <div class="mas-info" style="display:none;">
+                    <ul style="text-align:left; margin:0 1rem;">
+                        <li>Información relevante sobre el artículo 11.</li>
+                        <li>Detalles adicionales sobre el artículo 11.</li>
+                    </ul>
+                </div>
+                <button class="btn-comentar">Comentar</button>
+            </article>
+            <!-- === Doceava casilla === -->
+            <article>
+                <button class="img-btn">
+                    <img src="imagenes/foto12.jpg" alt="Foto 12">
+                </button>
+                <h2>Título 12</h2>
+                <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                <button class="btn-mas" onclick="mostrarMasInfo(this)">Más...</button>
+                <div class="mas-info" style="display:none;">
+                    <ul style="text-align:left; margin:0 1rem;">
+                        <li>Información relevante sobre el artículo 12.</li>
+                        <li>Detalles adicionales sobre el artículo 12.</li>
+                    </ul>
+                </div>
+                <button class="btn-comentar">Comentar</button>
+            </article>
+            <!-- === Treceava casilla === -->
+            <article>
+                <button class="img-btn">
+                    <img src="imagenes/foto13.jpg" alt="Foto 13">
+                </button>
+                <h2>Título 13</h2>
+                <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                <button class="btn-mas" onclick="mostrarMasInfo(this)">Más...</button>
+                <div class="mas-info" style="display:none;">
+                    <ul style="text-align:left; margin:0 1rem;">
+                        <li>Información relevante sobre el artículo 13.</li>
+                        <li>Detalles adicionales sobre el artículo 13.</li>
+                    </ul>
+                </div>
+                <button class="btn-comentar">Comentar</button>
+            </article>
+            <!-- === Catorceava casilla === -->
+            <article>
+                <button class="img-btn">
+                    <img src="imagenes/foto14.jpg" alt="Foto 14">
+                </button>
+                <h2>Título 14</h2>
+                <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                <button class="btn-mas" onclick="mostrarMasInfo(this)">Más...</button>
+                <div class="mas-info" style="display:none;">
+                    <ul style="text-align:left; margin:0 1rem;">
+                        <li>Información relevante sobre el artículo 14.</li>
+                        <li>Detalles adicionales sobre el artículo 14.</li>
+                    </ul>
+                </div>
+                <button class="btn-comentar">Comentar</button>
+            </article>
+            <!-- === Quinceava casilla === -->
+            <article>
+                <button class="img-btn">
+                    <img src="imagenes/foto15.jpg" alt="Foto 15">
+                </button>
+                <h2>Título 15</h2>
+                <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                <button class="btn-mas" onclick="mostrarMasInfo(this)">Más...</button>
+                <div class="mas-info" style="display:none;">
+                    <ul style="text-align:left; margin:0 1rem;">
+                        <li>Información relevante sobre el artículo 15.</li>
+                        <li>Detalles adicionales sobre el artículo 15.</li>
+                    </ul>
+                </div>
+                <button class="btn-comentar">Comentar</button>
+            </article>
+        </div> <!-- Fin de .articulos fila-extra -->
+
+        <!-- ======= BARRA DIVISORA ======= -->
+        <hr style="width:90%;margin:2rem auto;border:0;border-top:3px solid #00aaff;">
+
+        <!-- ======= TÍTULO DE SECCIÓN ======= -->
+        <h2 class="seccion-marca" style="text-align:center; color:#0099cc; margin-bottom:1.5rem;">iPhone</h2>
+
+        <!-- ======= TERCERA FILA DE PRODUCTOS (casillas extra) ======= -->
+        <div class="articulos fila-extra">
+            <!-- === Dieciseisava casilla === -->
+            <article>
+                <button class="img-btn">
+                    <img src="imagenes/foto16.jpg" alt="Foto 16">
+                </button>
+                <h2>Título 16</h2>
+                <p class="precio"><strong>Precio:</strong> <span>Por definir</span></p>
+                <button class="btn-mas" onclick="mostrarMasInfo(this)">Más...</button>
+                <div class="mas-info" style="display:none;">
+                    <ul style="text-align:left; margin:0 1rem;">
+                        <li>Información relevante sobre el artículo 16.</li>
+                        <li>Detalles adicionales sobre el artículo 16.</li>
+                    </ul>
+                </div>
+                <button class="btn-comentar">Comentar</button>
+            </article>
+        </div> <!-- Fin de .articulos fila-extra -->
+
+        <!-- ======= BARRA DIVISORA ======= -->
+        <hr style="width:90%;margin:2rem auto;border:0;border-top:3px solid #00aaff;">
+
+        <!-- ======= SECCIÓN ADICIONAL ======= -->
+        <section class="seccion-extra">
+            <h2>Otras secciones para usuarios</h2>
+            <p>Aquí puedes agregar información adicional, comentarios generales, promociones, novedades o cualquier contenido extra que desees mostrar debajo de los productos.</p>
+            <button class="btn-comentar">Comentar como usuario</button>
+        </section>
+
+        <!-- ======= SECCIÓN INFO EXTRA ======= -->
+        <section id="info-extra" class="info-extra" style="display: none;"> <!-- Sección oculta para info extra -->
+            <h2 id="info-titulo"></h2> <!-- Título dinámico -->
+            <img id="info-img" src="" alt="" style="max-width: 100%; border-radius: 8px;"> <!-- Imagen dinámica -->
+            <p id="info-texto"></p> <!-- Texto dinámico -->
+            <button onclick="cerrarInfoExtra()">Cerrar</button> <!-- Botón para cerrar la sección -->
+        </section>
+    </main>
+
+    <!-- =================== PIE DE PÁGINA =================== -->
+    <footer> <!-- Pie de página -->
+        <p>&copy; 2025 Glez comunicaciones</p> <!-- Derechos de autor -->
+    </footer>
+    <script src="scripts/main.js"></script> <!-- Vincula el archivo JavaScript -->
+    <script>
+    // Slider simple para productos destacados
+    const items = document.querySelectorAll('.slider-item');
+    let current = 0;
+    const infoProducto = [
+        "El Tecno Spark 10 Pro destaca por su cámara de 50MP, batería de larga duración y pantalla FHD+ de 6.8 pulgadas.",
+        "El Samsung A05 es reconocido por su rendimiento estable y excelente relación calidad-precio.",
+        "El producto 3 es ideal para quienes buscan funcionalidad y diseño moderno.",
+        "El producto 4 combina estilo y tecnología para usuarios exigentes.",
+        "El producto 5 ofrece características avanzadas y gran durabilidad."
+    ];
+    function actualizarBarraInfo(idx) {
+        document.getElementById('info-producto').innerHTML = infoProducto[idx];
+    }
+    actualizarBarraInfo(current);
+
+    document.getElementById('prev-slide').onclick = function() {
+        items[current].style.display = 'none';
+        current = (current - 1 + items.length) % items.length;
+        items[current].style.display = 'flex';
+        actualizarBarraInfo(current);
+    };
+    document.getElementById('next-slide').onclick = function() {
+        items[current].style.display = 'none';
+        current = (current + 1) % items.length;
+        items[current].style.display = 'flex';
+        actualizarBarraInfo(current);
+    };
+
+    // Desplegar submenú de galería al hacer clic
+    document.getElementById('galeria-toggle').onclick = function(e) {
+        e.preventDefault();
+        const submenu = document.getElementById('submenu-galeria');
+        submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
+    };
+    </script>
+</body>
+</html>
